@@ -10,7 +10,11 @@ public class SpacecraftControl {
         SpacecraftStatus status = null;
         int [] position = new int []{0,0,0};
         for (String command : commands) {
-            status = new SpacecraftStatus(new int [] {0,1,0}, "N");
+            if ("f".equals(command)) {
+                status = new SpacecraftStatus(new int [] {0,1,0}, "N");
+            } else {
+                status = new SpacecraftStatus(new int[]{0,-1,0}, "N");
+            }
         }
         return status;
     }
