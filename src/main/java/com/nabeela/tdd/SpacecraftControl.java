@@ -16,15 +16,6 @@ public class SpacecraftControl {
             } else if ("b".equals(command)){
                 this.move(-1, position, direction);
                 status = new SpacecraftStatus(position, direction);
-            } else if("r".equals(command)) {
-                direction = this.turn(command, direction);
-                status = new SpacecraftStatus(position, direction);
-            } else if("l".equals(command)) {
-                direction = this.turn(command, direction);
-                status = new SpacecraftStatus(position, direction);
-            } else if("u".equals(command)){
-                direction = this.turn(command, direction);
-                status = new SpacecraftStatus(position, direction);
             } else {
                 direction = this.turn(command, direction);
                 status = new SpacecraftStatus(position, direction);
