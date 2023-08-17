@@ -16,7 +16,6 @@ public class SpacecraftControl {
             } else if ("b".equals(command)){
                 this.move(-1, position, direction);
                 status = new SpacecraftStatus(position, direction);
-//                status = new SpacecraftStatus(new int[]{0,-1,0}, "N");
             } else if("r".equals(command)) {
                 status = new SpacecraftStatus(new int[]{0,0,0}, "E");
             } else if("l".equals(command)) {
