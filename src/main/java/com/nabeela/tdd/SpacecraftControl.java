@@ -16,8 +16,10 @@ public class SpacecraftControl {
                 status = new SpacecraftStatus(new int[]{0,-1,0}, "N");
             } else if("r".equals(command)) {
                 status = new SpacecraftStatus(new int[]{0,0,0}, "E");
-            } else {
+            } else if("l".equals(command)) {
                 status = new SpacecraftStatus(new int[]{0,0,0}, "W");
+            } else {
+                status = new SpacecraftStatus(new int[]{0,0,0}, "U");
             }
         }
         return status;
