@@ -26,7 +26,8 @@ public class SpacecraftControl {
                 direction = this.turn(command, direction);
                 status = new SpacecraftStatus(position, direction);
             } else {
-                status = new SpacecraftStatus(new int[]{0,0,0}, "D");
+                direction = this.turn(command, direction);
+                status = new SpacecraftStatus(position, direction);
             }
         }
         return status;
@@ -54,6 +55,8 @@ public class SpacecraftControl {
             newDirection = "W";
         } else if ("u".equals(command)){
             newDirection = "U";
+        } else {
+            newDirection = "D";
         }
         return newDirection;
     }
