@@ -26,5 +26,8 @@ public class SpacecraftControlTest {
 
         SpacecraftStatus expected5 = new SpacecraftStatus(new int[]{0,0,0}, "U");
         Assert.assertEquals(expected5, spacecraftControl.controlSpacecraft(List.of("u"),"N"));
+
+        SpacecraftStatus expected6 = new SpacecraftStatus(new int[]{0,0,0}, "D");
+        Assert.assertEquals(expected6, spacecraftControl.controlSpacecraft(List.of("d"),"N"));
     }
 }
