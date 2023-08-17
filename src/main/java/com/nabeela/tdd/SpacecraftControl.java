@@ -44,20 +44,19 @@ public class SpacecraftControl {
     }
 
     public String turn(String command, String direction) {
-        String newDirection = null;
-        if ("E".equals(direction) && "r".equals(command)){
-            newDirection = "S";
-        } else if ("N".equals(direction) && "r".equals(command)){
-            newDirection = "E";
-        } else if ("E".equals(direction) && "l".equals(command)){
-            newDirection = "N";
-        } else if ("N".equals(direction) && "l".equals(command)){
-            newDirection = "W";
-        } else if ("u".equals(command)){
-            newDirection = "U";
-        } else {
-            newDirection = "D";
+        if (direction.equals("E") && command.equals("r") || direction.equals("W") && command.equals("l") || direction.equals("U") && command.equals("r") || direction.equals("D") && command.equals("l")) {
+            return "S";
+        } else if (direction.equals("E") && command.equals("l") || direction.equals("W") && command.equals("r") || direction.equals("U") && command.equals("l") || direction.equals("D") && command.equals("r")) {
+            return "N";
+        } else if (direction.equals("N") && command.equals("r") || direction.equals("S") && command.equals("l")) {
+            return "E";
+        } else if (direction.equals("N") && command.equals("l") || direction.equals("S") && command.equals("r")) {
+            return "W";
+        } else if (command.equals("u")) {
+            return "U";
+        } else if (command.equals("d")) {
+            return "D";
         }
-        return newDirection;
+        return "U";
     }
 }
