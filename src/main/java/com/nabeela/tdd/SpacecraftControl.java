@@ -11,7 +11,8 @@ public class SpacecraftControl {
         int [] position = new int []{0,0,0};
         for (String command : commands) {
             if ("f".equals(command)) {
-                status = new SpacecraftStatus(new int [] {0,1,0}, "N");
+                this.move(1, position, direction);
+                status = new SpacecraftStatus(position, direction);
             } else if ("b".equals(command)){
                 status = new SpacecraftStatus(new int[]{0,-1,0}, "N");
             } else if("r".equals(command)) {
@@ -25,5 +26,15 @@ public class SpacecraftControl {
             }
         }
         return status;
+    }
+
+    private void move(int step, int[] position, String direction) {
+        if(direction.matches("E|W")){
+            position[0] = position[0]+ step;
+        } else if(direction.matches("S|N")){
+            position[1] = position[1] + step;
+        } else {
+            position[2] = position[2] + step;
+        }
     }
 }
